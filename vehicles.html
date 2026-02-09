@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Inventory - JN Sale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            900: '#7f1d1d',
+                        },
+                        dark: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #ef4444;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-3xl font-bold tracking-tighter text-white">
+                        JN<span class="text-brand-500">Sale</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-white hover:text-brand-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="vehicles.html"
+                            class="text-white hover:text-brand-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Vehicles</a>
+                        <a href="about.html"
+                            class="text-gray-300 hover:text-white hover:text-brand-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">About
+                            Us</a>
+                        <a href="contact.html"
+                            class="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-brand-500/30">Contact</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden glass-nav" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-700">
+                <a href="index.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="vehicles.html" class="text-white block px-3 py-2 rounded-md text-base font-medium">Vehicles</a>
+                <a href="about.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="contact.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="pt-32 pb-12 bg-gray-900 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold text-white mb-4">Our Premium Inventory</h1>
+            <p class="text-gray-400 text-lg">Browse our collection of high-quality vehicles.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="py-12 bg-gray-900 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-8">
+
+                <!-- Filters Sidebar -->
+                <div class="w-full lg:w-1/4">
+                    <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 sticky top-24">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold text-white">Filters</h3>
+                            <button class="text-sm text-brand-500 hover:text-brand-400">Reset All</button>
+                        </div>
+
+                        <!-- Search -->
+                        <div class="mb-6">
+                            <input type="text" placeholder="Search vehicle..."
+                                class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-brand-500">
+                        </div>
+
+                        <!-- Category -->
+                        <div class="mb-6">
+                            <h4 class="text-sm font-semibold text-gray-300 mb-3 uppercase tracking-wider">Category</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox"
+                                        class="form-checkbox text-brand-600 rounded bg-gray-700 border-gray-600">
+                                    <span class="text-gray-400">Cars (12)</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox"
+                                        class="form-checkbox text-brand-600 rounded bg-gray-700 border-gray-600">
+                                    <span class="text-gray-400">SUVs (8)</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox"
+                                        class="form-checkbox text-brand-600 rounded bg-gray-700 border-gray-600">
+                                    <span class="text-gray-400">Vans (5)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Price Range -->
+                        <div class="mb-6">
+                            <h4 class="text-sm font-semibold text-gray-300 mb-3 uppercase tracking-wider">Price Range
+                            </h4>
+                            <input type="range" min="0" max="50000000"
+                                class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-brand-500">
+                            <div class="flex justify-between mt-2 text-sm text-gray-400">
+                                <span>0</span>
+                                <span>50M+</span>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full bg-brand-600 text-white rounded-lg py-3 font-semibold hover:bg-brand-500 transition-colors">Apply
+                            Filters</button>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="w-full lg:w-3/4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                        <!-- Vehicle 1 -->
+                        <div class="group bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 card-hover">
+                            <div class="relative h-48 bg-gray-700 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center">
+                                    <span class="text-gray-400 font-medium">Toyota Premio</span>
+                                </div>
+                                <div
+                                    class="absolute top-4 right-4 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    New</div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-1">Toyota Premio G Superior</h3>
+                                <p class="text-gray-400 text-sm mb-4">2020 • Petrol • 35,000 km</p>
+                                <div class="flex justify-between items-center border-t border-gray-700 pt-4">
+                                    <span class="text-2xl font-bold text-white">Rs. 18,500,000</span>
+                                    <button class="text-brand-500 font-medium hover:text-brand-400">Details
+                                        &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 2 -->
+                        <div class="group bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 card-hover">
+                            <div class="relative h-48 bg-gray-700 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center">
+                                    <span class="text-gray-400 font-medium">Honda Vezel</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-1">Honda Vezel RS Sensing</h3>
+                                <p class="text-gray-400 text-sm mb-4">2019 • Hybrid • 42,000 km</p>
+                                <div class="flex justify-between items-center border-t border-gray-700 pt-4">
+                                    <span class="text-2xl font-bold text-white">Rs. 14,200,000</span>
+                                    <button class="text-brand-500 font-medium hover:text-brand-400">Details
+                                        &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 3 -->
+                        <div class="group bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 card-hover">
+                            <div class="relative h-48 bg-gray-700 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center">
+                                    <span class="text-gray-400 font-medium">Toyota Land Cruiser</span>
+                                </div>
+                                <div
+                                    class="absolute top-4 right-4 bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    Premium</div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-1">Toyota Land Cruiser Prado</h3>
+                                <p class="text-gray-400 text-sm mb-4">2018 • Diesel • 55,000 km</p>
+                                <div class="flex justify-between items-center border-t border-gray-700 pt-4">
+                                    <span class="text-2xl font-bold text-white">Rs. 45,000,000</span>
+                                    <button class="text-brand-500 font-medium hover:text-brand-400">Details
+                                        &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 4 -->
+                        <div class="group bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 card-hover">
+                            <div class="relative h-48 bg-gray-700 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center">
+                                    <span class="text-gray-400 font-medium">Suzuki Wagon R</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-1">Suzuki Wagon R FZ</h3>
+                                <p class="text-gray-400 text-sm mb-4">2019 • Hybrid • 28,000 km</p>
+                                <div class="flex justify-between items-center border-t border-gray-700 pt-4">
+                                    <span class="text-2xl font-bold text-white">Rs. 8,500,000</span>
+                                    <button class="text-brand-500 font-medium hover:text-brand-400">Details
+                                        &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 5 -->
+                        <div class="group bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 card-hover">
+                            <div class="relative h-48 bg-gray-700 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center">
+                                    <span class="text-gray-400 font-medium">Toyota KDH</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-1">Toyota KDH 201 Super GL</h3>
+                                <p class="text-gray-400 text-sm mb-4">2017 • Diesel • 60,000 km</p>
+                                <div class="flex justify-between items-center border-t border-gray-700 pt-4">
+                                    <span class="text-2xl font-bold text-white">Rs. 22,000,000</span>
+                                    <button class="text-brand-500 font-medium hover:text-brand-400">Details
+                                        &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 6 -->
+                        <div class="group bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 card-hover">
+                            <div class="relative h-48 bg-gray-700 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center">
+                                    <span class="text-gray-400 font-medium">Nissan X-Trail</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-1">Nissan X-Trail Hybrid</h3>
+                                <p class="text-gray-400 text-sm mb-4">2018 • Hybrid • 45,000 km</p>
+                                <div class="flex justify-between items-center border-t border-gray-700 pt-4">
+                                    <span class="text-2xl font-bold text-white">Rs. 15,500,000</span>
+                                    <button class="text-brand-500 font-medium hover:text-brand-400">Details
+                                        &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="mt-12 flex justify-center">
+                        <nav class="flex space-x-2">
+                            <a href="#"
+                                class="px-4 py-2 rounded-lg bg-gray-800 text-gray-400 border border-gray-700 hover:text-white">Previous</a>
+                            <a href="#" class="px-4 py-2 rounded-lg bg-brand-600 text-white font-bold">1</a>
+                            <a href="#"
+                                class="px-4 py-2 rounded-lg bg-gray-800 text-gray-400 border border-gray-700 hover:text-white hover:bg-gray-700 transition-colors">2</a>
+                            <a href="#"
+                                class="px-4 py-2 rounded-lg bg-gray-800 text-gray-400 border border-gray-700 hover:text-white hover:bg-gray-700 transition-colors">3</a>
+                            <a href="#"
+                                class="px-4 py-2 rounded-lg bg-gray-800 text-gray-400 border border-gray-700 hover:text-white">Next</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500">© 2026 JN Sale. All rights reserved. Designed for excellence.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

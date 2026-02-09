@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - JN Sale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            900: '#7f1d1d',
+                        },
+                        dark: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-3xl font-bold tracking-tighter text-white">
+                        JN<span class="text-brand-500">Sale</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-white hover:text-brand-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="vehicles.html"
+                            class="text-gray-300 hover:text-white hover:text-brand-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Vehicles</a>
+                        <a href="about.html"
+                            class="text-white hover:text-brand-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">About
+                            Us</a>
+                        <a href="contact.html"
+                            class="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-brand-500/30">Contact</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden glass-nav" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-700">
+                <a href="index.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="vehicles.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Vehicles</a>
+                <a href="about.html" class="text-white block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="contact.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="pt-32 pb-12 bg-gray-900 border-b border-gray-800 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h1 class="text-4xl font-bold text-white mb-4">About JN Sale</h1>
+            <p class="text-gray-400 text-lg max-w-2xl">Driving excellence in the Sri Lankan automotive market for over a
+                decade.</p>
+        </div>
+    </div>
+
+    <!-- Our Story -->
+    <div class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div
+                        class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-800 p-8 h-80 flex items-center justify-center">
+                        <!-- Placeholder -->
+                        <div class="text-center">
+                            <svg class="w-20 h-20 text-gray-600 mx-auto mb-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                            <span class="text-gray-500">Showroom Image Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6">Our Journey</h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Founded with a passion for automobiles and a commitment to customer satisfaction, JN Sale has
+                        grown to become one of the most trusted names in the car sale industry. We started with a small
+                        lot and a big dream: to change the way people buy cars in Sri Lanka.
+                    </p>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Today, we offer a curated selection of high-quality vehicles, from economical city cars to
+                        luxury SUVs. Our reputation is built on transparency, integrity, and reducing the hassle of
+                        buying a used vehicle.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-4xl font-bold text-brand-500 mb-2">10+</h3>
+                            <p class="text-gray-300">Years of Experience</p>
+                        </div>
+                        <div>
+                            <h3 class="text-4xl font-bold text-brand-500 mb-2">5000+</h3>
+                            <p class="text-gray-300">Happy Customers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission & Vision -->
+    <div class="py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Our Core Values</h2>
+                <div class="w-24 h-1 bg-brand-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700">
+                    <div class="w-12 h-12 bg-brand-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Integrity</h3>
+                    <p class="text-gray-400">We believe in honest, transparent dealings. No hidden faults, no hidden
+                        costs.</p>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Customer Focus</h3>
+                    <p class="text-gray-400">Your satisfaction is our priority. We go the extra mile to find the right
+                        car for you.</p>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Quality</h3>
+                    <p class="text-gray-400">We only stock vehicles that meet our strict quality standards.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500">© 2026 JN Sale. All rights reserved. Designed for excellence.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
